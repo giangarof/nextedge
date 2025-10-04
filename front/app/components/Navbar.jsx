@@ -8,7 +8,7 @@ const Navbar = () => {
     const path = usePathname()
     console.log(path)
 
-    const [isLoggedIn, setIsLoggedIn] = useState(true)
+    const [isLoggedIn, setIsLoggedIn] = useState(false)
 
     return ( <>
     <div className="flex flex-row justify-between bg-slate-500 text-white p-4">
@@ -32,15 +32,15 @@ const Navbar = () => {
         <ul className="flex gap-4">
             
             {isLoggedIn ? (<>
-                <p>Logout</p>
+                <p className="cursor-pointer">Logout</p>
             
             </>) : (<>
                     <Link
                     href="/access/login"
                     className={
                         path === "/access/login" || path === "/access/signup"
-                        ? "border-b-4 border-yellow-500 text-yellow-500"
-                        : "border-b-4 border-transparent hover:border-yellow-500 hover:text-yellow-500 transition"
+                        ? "border-b-4 border-yellow-500 text-yellow-500 cursor-pointer"
+                        : "border-b-4 border-transparent hover:border-yellow-500 hover:text-yellow-500 transition cursor-pointer"
                     }
                     >
                     Login/Signup
